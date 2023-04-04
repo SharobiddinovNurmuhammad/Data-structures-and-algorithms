@@ -31,9 +31,8 @@ async def signup_fullname(message: Message, state: FSMContext):
     full_name = data.get('full_name')
     kontakt = data.get('kontakt')
     await message.answer(f"{user_id} {full_name} {kontakt}")
-    await message.answer(f"{contact.phone_number}")
     try:
-        db.add_user(id=user_id, name=full_name, phone_number=kontakt)
+        db.add_user(user_id, full_name, kontakt)
     except:
         pass
     users = db.select_all_users()
