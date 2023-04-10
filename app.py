@@ -1,1 +1,1 @@
-print("ALgo")
+print("Algo")
